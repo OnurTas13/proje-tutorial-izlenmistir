@@ -1,6 +1,8 @@
 export interface property {
-    Id: number,
-    Name: string,
-    Type: string,
-    price: number
+    Id: number;
+    SellRent: number;
+    Name: string;
+    Type: string;
+    Price: number;
+    Image?: string;
 }

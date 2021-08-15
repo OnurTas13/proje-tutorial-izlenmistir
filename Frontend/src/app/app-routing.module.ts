@@ -5,11 +5,10 @@ import { PropertyDetailComponent } from './components/property-detail/property-d
 import { PropertyListComponent } from './components/property-list/property-list.component';
 
 const routes: Routes = [
-  {path:"", component:PropertyListComponent},
+  {path:"er", component:PropertyListComponent},
   {path:"add-property", component:AddPropertyComponent},
   {path:"rent-property", component:PropertyListComponent},
   {path:"property-detail/:id", component:PropertyDetailComponent}
-  
 ];
 
 @NgModule({

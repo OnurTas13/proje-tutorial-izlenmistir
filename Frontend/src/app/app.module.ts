@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +10,8 @@ import { PropertyCardComponent } from './components/property-card/property-card.
 import { PropertyListComponent } from './components/property-list/property-list.component';
 import { AddPropertyComponent } from './components/add-property/add-property.component';
 import { PropertyDetailComponent } from './components/property-detail/property-detail.component';
+import { UserRegisterComponent } from './components/user-register/user-register.component';
+import { UserLoginComponent } from './components/user-login/user-login.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,16 @@ import { PropertyDetailComponent } from './components/property-detail/property-d
     PropertyCardComponent,
     PropertyListComponent,
     AddPropertyComponent,
-    PropertyDetailComponent
+    PropertyDetailComponent,
+    UserRegisterComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

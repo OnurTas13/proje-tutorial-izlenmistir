@@ -9,26 +9,32 @@ import { HousingService } from 'src/app/services/housing.service';
   styleUrls: ['./property-list.component.css']
 })
 export class PropertyListComponent implements OnInit {
-  SellRent = 1;
+  sellRent : number = 1;
   properties: Array<property> = [];
 
   constructor(private housingService: HousingService, private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getAllProperties();
+    if(this.activatedRoute.snapshot.url.toString()){
+      this.sellRent = 2;
+    }
+    this.getAllProperties(this.sellRent);
   }
 
-  getAllProperties() {
-    this.housingService.getAllProperties().subscribe(data => {
+  getAllProperties(sellRent:number) {
+    this.housingService.getAllProperties(sellRent).subscribe(data => {
        this.properties = data; 
        console.log(data); 
-       console.log(this.activatedRoute.snapshot.url.toString()) },
+       },
       error => {
+        console.log("HttpError :");
         console.log(error);
       }
     );
   }
 
+  
+  
 
 
 }

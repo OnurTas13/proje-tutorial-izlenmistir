@@ -9,7 +9,7 @@
     },
     {
       "Id": 2,
-      "SellRent":1,
+      "SellRent":2,
       "Name": "Green House",
       "Type": "House",
       "Price": 12000,

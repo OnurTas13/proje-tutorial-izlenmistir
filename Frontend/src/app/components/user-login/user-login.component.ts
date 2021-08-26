@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators, AbstractControl } from "@angular/forms";
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { LoginModel } from 'src/app/models/loginModel';
 import { AuthService } from 'src/app/services/auth.service';
@@ -15,7 +16,8 @@ export class UserLoginComponent implements OnInit {
 
   constructor(private formBuilder:FormBuilder, 
               private authService:AuthService,
-              private toastr:ToastrService) { }
+              private toastr:ToastrService,
+              private router:Router) { }
 
   ngOnInit(): void {
     this.createLoginForm();
@@ -37,11 +39,11 @@ export class UserLoginComponent implements OnInit {
   }
   
   onLogin(){
-
     const token = this.authService.authUser(this.loginModelData())  
     if (token) {
       localStorage.setItem('token', token.userName)
       this.toastr.success('login successful');
+      this.router.navigate(['/']);
     }else{
       this.toastr.error('user id or password is wrong');
     }

@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from "@angular/forms";
+import { FormGroup, FormBuilder, FormControl, Validators, AbstractControl } from "@angular/forms";
+import { ToastrService } from 'ngx-toastr';
+import { User } from 'src/app/models/user';
+import { UserService } from 'src/app/services/user.service';
+
 
 @Component({
   selector: 'app-user-register',
@@ -8,11 +12,14 @@ import { FormGroup, FormBuilder, FormControl, Validators } from "@angular/forms"
 })
 export class UserRegisterComponent implements OnInit {
   registrationForm: FormGroup;
+  user: User;
+  userSubmitted:boolean;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private userService: UserService, private toastr:ToastrService) { }
 
   ngOnInit(): void {
-     this.createRegisterationForm()
+    this.createRegisterationForm();
+    this.registrationForm.controls['userName'].setValue('default value');
   }
 
   createRegisterationForm() {
@@ -22,19 +29,55 @@ export class UserRegisterComponent implements OnInit {
       password: [null, [Validators.required, Validators.minLength(8)]],
       confirmPassword: [null, Validators.required],
       mobile: [null, [Validators.required, Validators.maxLength(10)]]
-    },this.passwordMatchingValidator);
+    }, { validators: this.passwordMatchingValidator });
   }
-  
-  
-  passwordMatchingValidator(fg: FormGroup): Validators {
-      //@ts-ignore 
-      return fg.get('password').value === fg.get('confirmPassword').value ? null :
-        {notmatched: true};
- }
 
- onSubmit(){
-   console.log(this.registrationForm);
- }
+  passwordMatchingValidator(ac: AbstractControl): Validators {
+    return ac.get('password').value === ac.get('confirmPassword').value ? null :
+      { notMatched: true };
+  }
+
+  get userName() {
+    return this.registrationForm.get("userName") as FormControl
+  }
+
+  get email() {
+    return this.registrationForm.get("email") as FormControl
+  }
+
+  get password() {
+    return this.registrationForm.get("password") as FormControl
+  }
+
+  get confirmPassword() {
+    return this.registrationForm.get("confirmPassword") as FormControl
+  }
+
+  get mobile() {
+    return this.registrationForm.get("mobile") as FormControl
+  }
+
+  onSubmit() {
+    this.userSubmitted=true;
+    if (this.registrationForm.valid) {
+      // this.user = Object.assign(this.user, this.registrationForm.value);
+      this.userService.addUser(this.userData());
+      this.registrationForm.reset();
+      this.userSubmitted=false;
+      this.toastr.success('Congrats, you are succesfully registered');
+    }else{
+      this.toastr.error('Kindly provide the required fields');
+    }    
+  }
+
+  userData(): User {
+    return this.user = {
+      userName: this.userName.value,
+      email: this.email.value,
+      password: this.password.value,
+      mobile: this.mobile.value
+    }
+  }
 
 
 }

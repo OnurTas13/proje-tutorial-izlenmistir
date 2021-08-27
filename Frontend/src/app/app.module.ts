@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
@@ -35,7 +36,8 @@ import { UserLoginComponent } from './components/user-login/user-login.component
     ReactiveFormsModule,
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
-    ToastrModule.forRoot({positionClass:"toast-bottom-right"})
+    ToastrModule.forRoot({positionClass:"toast-bottom-right"}),
+    TabsModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PropertyCardComponent implements OnInit {
 @Input() property : any
+@Input() hideIcons : boolean
 
   constructor() { }
 

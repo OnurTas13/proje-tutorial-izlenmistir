@@ -1,8 +1,5 @@
-export interface Property {
-    Id: number;
-    SellRent: number;
-    Name: string;
-    Type: string;
-    Price: number;
-    Image?: string;
-}
+import { PropertyBase } from "./propertyBase";
+
+export interface Property extends PropertyBase {
+    description: string;
+  }

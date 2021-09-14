@@ -229,6 +229,7 @@ export class AddPropertyComponent implements OnInit {
   }
 
   mapProperty():void{
+    this.property.id= this.housingService.newPropID();
     this.property.sellRent = +this.sellRent.value;
     this.property.BHK = this.BHK.value;
     this.property.pType = this.pType.value;

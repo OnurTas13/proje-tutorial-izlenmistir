@@ -7,6 +7,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+// import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +19,7 @@ import { AddPropertyComponent } from './components/add-property/add-property.com
 import { PropertyDetailComponent } from './components/property-detail/property-detail.component';
 import { UserRegisterComponent } from './components/user-register/user-register.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,7 @@ import { UserLoginComponent } from './components/user-login/user-login.component
     AddPropertyComponent,
     PropertyDetailComponent,
     UserRegisterComponent,
-    UserLoginComponent
+    UserLoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,8 @@ import { UserLoginComponent } from './components/user-login/user-login.component
     ToastrModule.forRoot({positionClass:"toast-bottom-right"}),
     TabsModule.forRoot(),
     ButtonsModule.forRoot(),
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    NgxGalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

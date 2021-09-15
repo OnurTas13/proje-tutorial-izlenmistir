@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { CProperty } from 'src/app/models/classProperty';
 import { HousingService } from '../housing.service';
 
@@ -13,6 +14,13 @@ export class PropertyDetailResolverService implements Resolve<CProperty> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<CProperty> | CProperty {
     const propId = route.params['id'];
-    return this.housingService.getProperty(+propId); 
+    return this.housingService.getProperty(+propId)
+    .pipe(
+      catchError(error => {
+        this.router.navigate(['/'])
+        return of(null);
+      })
+    );
+    
   }
 }

@@ -20,6 +20,8 @@ import { PropertyDetailComponent } from './components/property-detail/property-d
 import { UserRegisterComponent } from './components/user-register/user-register.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { SortPipe } from './pipes/sort.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
     PropertyDetailComponent,
     UserRegisterComponent,
     UserLoginComponent,
+    SortPipe,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

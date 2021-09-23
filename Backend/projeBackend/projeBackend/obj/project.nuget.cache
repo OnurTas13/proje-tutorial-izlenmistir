@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "heEdaU1t55qxOXBvwHO5OV0wN8nWNH6CxUImCESgiPAGKa7r4Z0xZ36ReqZf2oNgTsgtD6AKOjlC1mxz/4Of6g==",
+  "dgSpecHash": "M5aReUsnHcMCJEvjonh4Qmf/WaeQ8eKBITsZY8pa7YIhVId09oxZh8nkAa/V/4G2x36kpMdwuN0HQ2Km3GQbRQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gseren\\Desktop\\HSPA\\Backend\\projeBackend\\projeBackend\\projeBackend.csproj",
+  "projectFilePath": "C:\\Users\\gseren\\Desktop\\HSPA\\Backend\\projeBackend\\projeBackend\\WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gseren\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\gseren\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

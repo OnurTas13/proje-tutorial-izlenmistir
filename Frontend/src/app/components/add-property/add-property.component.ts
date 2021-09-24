@@ -17,6 +17,7 @@ export class AddPropertyComponent implements OnInit {
   @ViewChild('formTabs') formTabs: TabsetComponent;
   nextClicked: boolean;
   property = new CProperty();
+  cityList : string[];
 
   propertyTypes: string[] = ['House', 'Apartmen', 'Dublex'];
   furnishTypes: string[] = ['Fully', 'Semi', 'Unfurnished'];
@@ -39,7 +40,10 @@ export class AddPropertyComponent implements OnInit {
     private toastrService: ToastrService) { }
 
   ngOnInit(): void {
-    this.createAddPropertyForm()
+    this.createAddPropertyForm();
+    this.housingService.getAllCity().subscribe(data => {this.cityList=data;
+    console.log(this.cityList)})
+
   }
 
   createAddPropertyForm() {
@@ -234,7 +238,7 @@ export class AddPropertyComponent implements OnInit {
     this.property.BHK = this.BHK.value;
     this.property.pType = this.pType.value;
     this.property.name = this.name.value;
-    this.property.city = this.name.value;
+    this.property.city = this.city.value;
     this.property.fType = this.fType.value;
     this.property.price = this.price.value;
     this.property.security = this.security.value;

@@ -55,7 +55,7 @@
                                     <label for="price">City</label>
                                     <select formControlName="city" type="text" class="form-select">
                                         <option [value]="null">--Select City--</option>
-                                        <option *ngFor="let city of cityList" value={{city}}>{{city}}</option>
+                                        <option *ngFor="let city of cityList" value={{city.id}}>{{city.name}}</option>
                                     </select>
                                 </div>
                                 <br>

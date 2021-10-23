@@ -28,12 +28,12 @@ export class FilterPipe implements PipeTransform {
         else {
           for (const item2 of value) {
             if (item2[propName] === filterString) {
-              resultArray.push(item);
+              resultArray.push(item2);
             }
           }
           return resultArray;
         }
-        
+        break;
       }
 
     }

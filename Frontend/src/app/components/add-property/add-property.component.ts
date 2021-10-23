@@ -17,7 +17,7 @@ export class AddPropertyComponent implements OnInit {
   @ViewChild('formTabs') formTabs: TabsetComponent;
   nextClicked: boolean;
   property = new CProperty();
-  cityList : string[];
+  cityList : any[];
 
   propertyTypes: string[] = ['House', 'Apartmen', 'Dublex'];
   furnishTypes: string[] = ['Fully', 'Semi', 'Unfurnished'];

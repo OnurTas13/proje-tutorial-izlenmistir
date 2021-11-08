@@ -77,7 +77,7 @@ export class UserRegisterComponent implements OnInit {
       userName: this.userName.value,
       email: this.email.value,
       password: this.password.value,
-      mobile: Number(this.mobile.value) 
+      mobile: Number(this.mobile.value)
     }
   }
 

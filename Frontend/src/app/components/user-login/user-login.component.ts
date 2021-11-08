@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators, AbstractControl } from "@angular/forms";
+import { FormGroup, FormBuilder, FormControl, Validators, AbstractControl, NgForm } from "@angular/forms";
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { LoginModel } from 'src/app/models/loginModel';
+import { UserForLogin, UserForLoginRes } from 'src/app/models/user';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -12,6 +13,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class UserLoginComponent implements OnInit {
   loginForm:FormGroup;
+  userForLogin:UserForLogin;
   loginModel:LoginModel;
 
   constructor(private formBuilder:FormBuilder, 
@@ -39,14 +41,20 @@ export class UserLoginComponent implements OnInit {
   }
   
   onLogin(){
-    const token = this.authService.authUser(this.loginModelData())  
-    if (token) {
-      localStorage.setItem('token', token.userName)
-      this.toastr.success('login successful');
-      this.router.navigate(['/']);
-    }else{
-      this.toastr.error('user id or password is wrong');
-    }
+    this.authService.authUser(this.userForLoginData()).subscribe(
+      //@ts-ignore
+      (response : UserForLoginRes) => {
+        console.log(response);
+        const user = response;
+        localStorage.setItem('token',user.token);
+        localStorage.setItem('userName',user.userName);
+        this.toastr.success('login successful');
+        this.router.navigate(['/']);
+      },error => {
+        console.log(error);
+        this.toastr.error(error.error);
+      }
+    );
   }
 
   loginModelData():LoginModel{
@@ -54,6 +62,13 @@ export class UserLoginComponent implements OnInit {
       name: this.name.value,
       password: this.password.value
     }
+  }
+
+  userForLoginData():UserForLogin{
+      return this.userForLogin = {
+        userName: this.name.value,
+        password: this.password.value
+      }
   }
 
 

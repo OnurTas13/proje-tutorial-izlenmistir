@@ -6,7 +6,6 @@ C:\Users\gseren\Desktop\HSPA\Backend\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\WebAP
 C:\Users\gseren\Desktop\HSPA\Backend\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\WebAPI.runtimeconfig.dev.json
 C:\Users\gseren\Desktop\HSPA\Backend\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\WebAPI.dll
 C:\Users\gseren\Desktop\HSPA\Backend\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\WebAPI.pdb
-C:\Users\gseren\Desktop\HSPA\Backend\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csprojAssemblyReference.cache
 C:\Users\gseren\Desktop\HSPA\Backend\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.AssemblyInfoInputs.cache
 C:\Users\gseren\Desktop\HSPA\Backend\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.AssemblyInfo.cs
 C:\Users\gseren\Desktop\HSPA\Backend\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csproj.CoreCompileInputs.cache
@@ -39,3 +38,14 @@ C:\Users\gseren\Desktop\HSPA\Backend\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\runti
 C:\Users\gseren\Desktop\HSPA\Backend\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\gseren\Desktop\HSPA\Backend\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\gseren\Desktop\HSPA\Backend\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csproj.CopyComplete
+C:\Users\gseren\Desktop\HSPA\Backend\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\gseren\Desktop\HSPA\Backend\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\gseren\Desktop\HSPA\Backend\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\gseren\Desktop\HSPA\Backend\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\gseren\Desktop\HSPA\Backend\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\gseren\Desktop\HSPA\Backend\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\gseren\Desktop\HSPA\Backend\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\gseren\Desktop\HSPA\Backend\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\gseren\Desktop\HSPA\Backend\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\gseren\Desktop\HSPA\Backend\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\gseren\Desktop\HSPA\Backend\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csprojAssemblyReference.cache

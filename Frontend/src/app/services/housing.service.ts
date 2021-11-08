@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 import { Observable } from 'rxjs';
 import { CProperty } from '../models/classProperty';
@@ -10,10 +11,11 @@ import { map } from 'rxjs/operators';
 })
 export class HousingService {
 
+  baseUrl=environment.baseUrl;
   constructor(private http: HttpClient) { }
 
   getAllCity():Observable<any[]>{
-    return this.http.get<any[]>("http://localhost:42644/api/city");
+    return this.http.get<any[]>(this.baseUrl + "/city/cities");
   }
 
   getProperty(id: number) {

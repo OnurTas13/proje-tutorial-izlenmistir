@@ -50,9 +50,6 @@ export class UserLoginComponent implements OnInit {
         localStorage.setItem('userName',user.userName);
         this.toastr.success('login successful');
         this.router.navigate(['/']);
-      },error => {
-        console.log(error);
-        this.toastr.error(error.error);
       }
     );
   }

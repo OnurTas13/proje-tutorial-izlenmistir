@@ -13,9 +13,9 @@ import { AuthService } from 'src/app/services/auth.service';
 export class UserRegisterComponent implements OnInit {
   registrationForm: FormGroup;
   user: UserForRegister;
-  userSubmitted:boolean;
+  userSubmitted: boolean;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private toastr:ToastrService) { }
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.createRegisterationForm();
@@ -58,18 +58,15 @@ export class UserRegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    this.userSubmitted=true;
+    this.userSubmitted = true;
     if (this.registrationForm.valid) {
       // this.user = Object.assign(this.user, this.registrationForm.value);
-      this.authService.registerUser(this.userData()).subscribe(()=>{
+      this.authService.registerUser(this.userData()).subscribe(() => {
         this.registrationForm.reset();
         this.toastr.success('Congrats, you are succesfully registered');
-      },error=>{
-        console.log(error);
-        this.toastr.error(error.error);
       }
       )
-    }     
+    }
   }
 
   userData(): UserForRegister {

@@ -24,6 +24,7 @@ namespace WebAPI.Controllers
             this.configuration = configuration;
             this.uow = uow;
         }
+
         [HttpPost("Login")]
         public async Task<IActionResult> Login (LoginReqDto loginReq)
         {
@@ -41,6 +42,11 @@ namespace WebAPI.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterReqDto registerReq)
         {
+          
+            if (string.IsNullOrEmpty(registerReq.UserName.Trim()) || string.IsNullOrEmpty(registerReq.Password.Trim()))
+            {
+                return BadRequest("UserName or password can not be blank");
+            }
             if (await uow.UserRepository.UserAlreadyExists(registerReq.UserName))
             {
                 return BadRequest("User already exists, please try something else");
@@ -49,6 +55,7 @@ namespace WebAPI.Controllers
             await uow.SaveAsync();
             return StatusCode(201);
         }
+
         private string CreateJWT(User user)
         {
             var secretKey = configuration.GetSection("AppSettings:Key").Value;

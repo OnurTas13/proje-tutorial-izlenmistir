@@ -20,6 +20,7 @@ export class PropertyListComponent implements OnInit {
   constructor(private housingService: HousingService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+
     if (this.activatedRoute.snapshot.url.toString()) {
       this.sellRent = 2;
     }

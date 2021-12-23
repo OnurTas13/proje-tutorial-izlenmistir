@@ -8,7 +8,7 @@
             <div class="card-body">
                 <h1 class="card-title">{{property.name}}</h1>
                 <div>
-                    <strong>{{property.BHK}} BHK {{property.pType}} @ ${{property.price}}</strong>
+                    <strong>{{property.BHK}} BHK {{property.propertyType}} @ ${{property.price}}</strong>
                 </div>
                 <div>
                     <strong>in {{property.city}}</strong>
@@ -24,7 +24,12 @@
                 </div>
                 <div>
                     <strong>Furnishing Type: </strong>
-                    {{property.fType}}
+                    {{property.furnishingType}}
+                </div>
+                <div>
+                    <strong>Available for: </strong>
+                    <span *ngIf="property.sellRent==1">Purchase</span>
+                    <span *ngIf="property.sellRent==2">Rent</span>
                 </div>
             </div>
             <div class="card-footer">
@@ -49,17 +54,17 @@
           
                             <div class="heading">
                                 <strong>Floor Number</strong>
-                                <p>{{property.floorNo}} of {{property.totalFloor}}</p>
+                                <p>{{property.floorNo}} of {{property.totalFloors}}</p>
                             </div>
           
                             <div class="heading">
                                 <strong>Age of Property</strong>
-                                <p>{{property.AOP}}</p>
+                                <p>{{property.age}}</p>
                             </div>
           
                             <div class="heading">
                                 <strong>Posession</strong>
-                                <p>{{property.possession| date}}</p>
+                                <p>{{property.estPossessionOn| date}}</p>
                             </div>
                         </div>
           

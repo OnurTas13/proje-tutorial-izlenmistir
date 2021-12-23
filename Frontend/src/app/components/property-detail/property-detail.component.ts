@@ -70,6 +70,8 @@ export class PropertyDetailComponent implements OnInit {
         this.property = data['pdrs']
       }
     );
+
+    this.property.age = this.housingService.getPropertyAge(this.property.estPossessionOn);
     
     // this.activatedRoute.params.subscribe((params) => {
     //   this.propertyId = +params["id"] 

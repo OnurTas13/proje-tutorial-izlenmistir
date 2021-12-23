@@ -5,11 +5,12 @@ import { PropertyDetailComponent } from './components/property-detail/property-d
 import { PropertyListComponent } from './components/property-list/property-list.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { UserRegisterComponent } from './components/user-register/user-register.component';
+import { LoginGuard } from './guards/login.guard';
 import { PropertyDetailResolverService } from './services/Resolvers/property-detail-resolver.service';
 
 const routes: Routes = [
   {path:"", component:PropertyListComponent},
-  {path:"add-property", component:AddPropertyComponent},
+  {path:"add-property", component:AddPropertyComponent, canActivate:[LoginGuard] },
   {path:"rent-property", component:PropertyListComponent},
   {path:"property-detail/:id", component:PropertyDetailComponent, resolve: {pdrs: PropertyDetailResolverService}},
   {path:"user/login", component:UserLoginComponent},

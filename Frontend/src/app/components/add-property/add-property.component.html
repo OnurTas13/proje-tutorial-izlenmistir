@@ -25,35 +25,35 @@
                                 <div class="form-group col-12">
                                     <p>BHK</p>
                                     <div class="btn-group" btnRadioGroup formControlName="BHK">
-                                        <label *ngFor="let bhk of [1,2,3,4]" btnRadio={{bhk}}
+                                        <label (click)="propertyView.BHK= bhk" *ngFor="let bhk of [1,2,3,4]" btnRadio={{bhk}}
                                             class="btn btn-outline-primary mx-1" role="button">{{bhk}}</label>
                                     </div>
                                 </div>
 
                                 <div class="form-group col-12">
                                     <p>Property Type</p>
-                                    <div class="btn-group" btnRadioGroup formControlName="pType" [(ngModel)]="propertyView.pType">
-                                        <label *ngFor="let ptype of propertyTypes" class="btn btn-outline-primary mx-1"
-                                            [btnRadio]="ptype">{{ptype}}</label>
+                                    <div class="btn-group" btnRadioGroup formControlName="pType">
+                                        <label (click)="propertyView.propertyType=ptype.name" *ngFor="let ptype of propertyTypes" class="btn btn-outline-primary mx-1"
+                                            btnRadio={{ptype.id}}>{{ptype.name}}</label>
                                     </div>
                                 </div>
 
                                 <div class="form-group col-12">
                                     <p>Furnish type</p>
                                     <div class="btn-group" btnRadioGroup formControlName="fType">
-                                        <label *ngFor="let fType of furnishTypes" btnRadio={{fType}}
-                                            class="btn btn-outline-primary mx-1" role="button">{{fType}}</label>
+                                        <label (click)="propertyView.furnishingType=fType.name" *ngFor="let fType of furnishTypes" btnRadio={{fType.id}} 
+                                            class="btn btn-outline-primary mx-1" role="button">{{fType.name}}</label>
                                     </div>
                                 </div>
 
                                 <div class="form-group col-12">
                                     <label>in Building/Society/Project</label>
-                                    <input type="text" formControlName="name" class="form-control">
+                                    <input #propName (keyup)="propertyView.name=propName.value" type="text" formControlName="name" class="form-control">
                                 </div>
 
                                 <div class="form-group col-12">
                                     <label for="price">City</label>
-                                    <select formControlName="city" type="text" class="form-select">
+                                    <select #City (change)="propertyView.city=City.options[City.options.selectedIndex].text" formControlName="city" type="text" class="form-select">
                                         <option [value]="null">--Select City--</option>
                                         <option *ngFor="let city of cityList" value={{city.id}}>{{city.name}}</option>
                                     </select>
@@ -85,11 +85,11 @@
                                 </div>
                                 <div class="form-group col-12">
                                     <label>Built Area (in Sqr Feet)</label>
-                                    <input formControlName="builtArea" type="text" class="form-control">
+                                    <input formControlName="builtArea" type="number" class="form-control">
                                 </div>
                                 <div class="form-group col-12">
                                     <label>Carpet Area (in sqr Feet)</label>
-                                    <input formControlName="carpetArea" type="text" class="form-control">
+                                    <input formControlName="carpetArea" type="number" class="form-control">
                                 </div><br>
                                 <div class="d-grid gap-2">
                                     <button type="button" class="btn btn-primary btn-sm"
@@ -101,11 +101,11 @@
                             <tab heading="Address" formGroupName="addressInfo" >
                                 <div class="form-group col-12">
                                     <label>Floor</label>
-                                    <input formControlName="floorNo" type="text" class="form-control">
+                                    <input formControlName="floorNo" type="number" class="form-control">
                                 </div>
                                 <div class="form-group col-12">
                                     <label>Total Floor</label>
-                                    <input formControlName="totalFloor" type="text" class="form-control">
+                                    <input formControlName="totalFloor" type="number" class="form-control">
                                 </div>
                                 <div class="form-group col-12">
                                     <label>Address</label>

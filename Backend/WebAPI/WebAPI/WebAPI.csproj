@@ -7,6 +7,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20211118081725_property.cs" />
     <Compile Remove="Migrations\20211118081725_property.Designer.cs" />
+    <Compile Remove="Migrations\20211119123656_SeedDemoData.cs" />
+    <Compile Remove="Migrations\20211119123656_SeedDemoData.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
